@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Test</string>
-    <string name="api_url">https://api.themoviedb.org/3</string>
-    <string name="api_key">39aa1a462b9a8e9bc2349ed20bf87913</string>
-    <string name="images_url">https://www.themoviedb.org/t/p/w600_and_h900_bestv2/</string>
+    <string name="api_detail_url">https://api.themoviedb.org/3/movie/%s?api_key=39aa1a462b9a8e9bc2349ed20bf87913</string>
+    <string name="api_search_url">https://api.themoviedb.org/3/search/movie?api_key=39aa1a462b9a8e9bc2349ed20bf87913&amp;query=%s</string>
+    <string name="images_detail_url">https://www.themoviedb.org/t/p/w600_and_h900_bestv2/%s</string>
+    <string name="images_thumbnail_url">https://www.themoviedb.org/t/p/w600_and_h900_bestv2/%s</string>
 </resources>
