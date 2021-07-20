@@ -24,6 +24,14 @@ class FavoritesPropertyManager {
         preferences.edit().putString(FAVORITES_KEY, Gson().toJson(favorites)).commit()
     }
 
+    fun removeFromFavorites(movieToRemove: Movie){
+        var favorites = getFavorites()
+        if(favorites.movies != null){
+            favorites.movies.removeIf{ movie -> movie.id == movieToRemove.id }
+        }
+        preferences.edit().putString(FAVORITES_KEY, Gson().toJson(favorites)).commit()
+    }
+
     fun getFavorites(): Favorites{
         val favoritesString = preferences.getString(FAVORITES_KEY,"{}")
         return Gson().fromJson<Favorites>(favoritesString, Favorites::class.java)

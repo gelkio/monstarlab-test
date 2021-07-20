@@ -78,11 +78,12 @@ class MovieDetailDialogFragment(val movie: Movie,
             Picasso.get().load(url).into(moviePosterImageView)
             if (isInFavorites()) {
                 favoriteBtn.setImageResource(R.drawable.ic_baseline_favorite_on)
-            } else {
-                favoriteBtn.setOnClickListener {
-                    if (!isInFavorites()) {
-                        addToFavorites()
-                    }
+            }
+            favoriteBtn.setOnClickListener {
+                if (!isInFavorites()) {
+                    addToFavorites()
+                }else{
+                    removeFromFavorites()
                 }
             }
         }
@@ -94,6 +95,14 @@ class MovieDetailDialogFragment(val movie: Movie,
     fun addToFavorites(){
         favoritePropertiesManager.addToFavorites(movie)
         favoriteBtn.setImageResource(R.drawable.ic_baseline_favorite_on)
+    }
+
+    /*
+    Removes a movie to favorite list
+     */
+    fun removeFromFavorites(){
+        favoritePropertiesManager.removeFromFavorites(movie)
+        favoriteBtn.setImageResource(R.drawable.ic_baseline_favorite_off)
     }
 
     /*
